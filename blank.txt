@@ -1,0 +1,80 @@
+const array = [1,2,3,4];
+array;
+const byTwo = array.map((number) => ({number: number * 2}))
+byTwo;
+
+this.value = 1;
+let obj = {
+    value: 0,
+    increment: ()=>{
+        setTimeout(() => { 
+            this.value++;
+            console.log(this.value);
+        }, 1000)
+    }
+};
+obj;
+obj.increment();
+obj;
+
+
+function buy(item = "tamago",amount = 2){
+    item;
+    amount;
+}
+buy();
+
+function print(ele1,ele2,ele3,...arr){
+    ele1;
+    //var arr = Array.prototype.slice.call(arguments);
+    console.log(arr);
+}
+print("a",1,true);
+
+var arr = ["Hello, ","world!"];
+//arr = ["<br>"].concat(arr).concat(["<br>"]);
+arr = ["<br>", ...arr, "<br>"];
+console.log(arr.join(""));
+
+
+const message = "Hello, world";
+const chars = [...message];
+chars;
+
+
+
+
+let foods = ["a", "b", "c", "d", "e"];
+let message = `私が好きな食べ物は、${foods.map(function (foods){return`「${foods}」`}).join(",")}です。`
+console.log(message);
+
+
+function output(string, ...values){
+    let message = "";
+    string.forEach((string, index) =>{
+        message += string;
+        if(index < values.length){
+            message += `<b>${values[index]}<b>`
+        }
+    });
+     return message;
+    // console.log(values);
+    // console.log(arguments);
+}
+
+let name = "太郎";
+let age = 18;
+const message1 = output`私の名前は${name}で、${age}歳です。`
+console.log(message1);
+
+let person = {
+    firstname: "太郎",
+    age: 20,
+    getOlder(){
+        this.age++; 
+    }
+};
+person.getOlder();
+console.log(person);
+person.getOlder();
+console.log(person);
