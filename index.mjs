@@ -1,58 +1,30 @@
-// //分割代入
-// var numbers = [1,2,3,4];
-// let [a,b,c,d] = numbers;
-// console.log(a)
+// generator
+// let arr = [10,20,30];
 
-// function getConfig(){
-//     return[
-//         true,
-//         10,
-//         1,
-//         2,
-//         3
-//     ]
+// for (n of arr.entries()){
+//     console.log(n);
 // }
 
-// const config = getConfig();
-// console.log(config[0]);
-
-// const [isOn, amount,...data] = getConfig();
-// console.log(isOn);
-// console.log(amount);
-// console.log(data);
-
-// let _isOn = false;
-// let _amount = 10;
-
-// function setConfig(config){
-//     _isOn = config[0];
-//     _amount = config[1];
-// }
-// function setConfig([isOn, amount]) {
-//     _isOn = isOn;
-//     _amount = amount;
+// function* myGenerator(){
+//     console.log("a");
+//     yield 1;
+//     console.log("i");
+//     yield 2;
+//     console.log("u");
+//     yield 3;
+//     console.log("e");
 // }
 
-// setConfig([true,20]);
-
-var config = {};
-function setConfig({isOn,amount}){
-    config = {isOn,amount};
-    console.log(config);
-}
-
-setConfig({ isOn: true, amount: 30});
-
-function  getConfig() {
-    return {
-        isOn: true,
-        amount: 10,
-        servers:{
-            a:"abcd",
-            b:"efgh"
-        }
+// let iter = myGenerator();
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+let obj = {
+    *myGenerator(){
+        yield 1;
     }
 }
 
-let {isOn: onOffInfo, amount:dataAmount} = getConfig();
-console.log(onOffInfo, dataAmount);
+let iter = obj.myGenerator();
+console.log(iter.next());
