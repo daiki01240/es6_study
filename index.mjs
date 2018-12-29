@@ -1,83 +1,36 @@
-// //Promise
-// var func_one = function(callback,int){
-//     console.log("The First"+int);
-//     if(callback){
-//         callback();
-//     }
-// };
-
-// var func_two = function (callback) {
-//     console.log("The Two");
-//         if (callback) {
-//             callback();
-//         }
-// };
-
-// var func_three = function (callback) {
-//     console.log("The Three");
-//     if (callback) {
-//         callback();
-//     }
-// };
-
-// func_one(function(){
-//     func_two(function(){
-//         func_three();
-//     });
-// },1);
-
-// function getName(){
-//     setTimeout(()=>{
-//         console.log("dadada");
-//     },2000);
-// }
-
-// getName();
-
-function getName() {
-    return new Promise((resolve,reject) => {
-        throw new Error("Errorrr");;
-    });
-}
-
-function getAge(){
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve(20);            
-        }, 4000);
-    });
-}
-
-// Promise.all([
-//     getName(),
-//     getAge()
-// ])
-// .then(([name,age]) =>{
-//     console.log(name);
-//     console.log(age);
+//objct.assign()
+let obj1 = {};
+let obj2 = {name: "太郎"};
+let obj3 = {location: "tokyo"};
+// Object.keys(obj2).forEach(function (key) {
+//     obj1[key] = obj2[key];
 // });
+Object.assign(obj1, obj2, obj3);
+
+console.log(obj1);
+
+//let string = Array(10).fill("*").join("");
+let string = "*".repeat(10);
+console.log(string);
+
+let message = "Hello, world";
+let substring = "world";
+let index = message.indexOf(substring);
+console.log(index);
+
+let answer1 = message.includes(substring);
+let answer2 = message.endsWith(substring);
+let answer3 = message.startsWith(substring);
+console.log(answer1);
+console.log(answer2);
+console.log(answer3);
 
 
-var fff =  getName()
- .then(name => {
-     console.log(name);
- })
- .catch(err => {
-     console.log(err);
- })
- .then(value=>{
-     console.log(value);
-     console.log("Finalaaaaaaaaaaaa");
- });
-//  .then(getAge)
-//  .then(age => {
-//      console.log(age);
-//  });
-
-function getNameAll() {
-    return Promise.resolve("taro")
+function trunc(x) {
+    return (x < 0 ? Math.ceil(x) : Math.floor(x));
 }
+console.log(trunc(1.111));
+console.log(Math.trunc(1.111));
 
-getNameAll().then(name => {
-    console.log(name);
-})
+//isNan()
+ 
